@@ -8,7 +8,7 @@ const TITULOS = { CONSUMIDOR_FINAL: 'Factura · Consumidor Final', CREDITO_FISCA
 function emisor() {
   const e = process.env;
   return {
-    nombre: e.EMPRESA_NOMBRE || 'Mesas y Sillas',
+    nombre: e.EMPRESA_NOMBRE || 'Mesas Rosas',
     nit: e.EMPRESA_NIT || '', nrc: e.EMPRESA_NRC || '', giro: e.EMPRESA_GIRO || '',
     direccion: e.EMPRESA_DIRECCION || '', telefono: e.EMPRESA_TELEFONO || ''
   };
