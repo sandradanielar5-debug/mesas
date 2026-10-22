@@ -116,7 +116,7 @@ function comprobante(p, onDone) {
   const metodo = p.metodo === 'TARJETA' ? `${esc(p.tarjeta_marca)} •••• ${esc(p.tarjeta_ultimos4)}` : 'Efectivo';
   const reserva = '#' + p.reserva_id + (p.fecha ? ` · ${fmtDay(p.fecha)} ${String(p.hora_inicio).slice(0, 5)}–${String(p.hora_fin).slice(0, 5)}` : '');
   const m = openModal('Comprobante de pago', `<div class="rcpt">
-    <div class="rcpt-head">Mesas &amp; Sillas</div>
+    <div class="rcpt-head">Mesas &amp; Rosas</div>
     <div class="rcpt-total">${fmtMoney(p.monto)}</div><div class="rcpt-state">${badge(p.estado)}</div>
     ${p.factura_numero ? `<div class="rcpt-fac">🧾 Factura <b>${esc(p.factura_numero)}</b> · ${esc(TIPO_FACTURA[p.factura_tipo])}</div>` : ''}
     <div style="margin-top:14px">
