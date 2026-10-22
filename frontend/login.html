@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ingresar · Mesas &amp; Sillas</title><link rel="stylesheet" href="css/styles.css"></head>
+<body data-public="1"><div class="auth">
+<section class="auth-hero"><div class="brand"><span class="logo">🪑</span>Mesas &amp; Sillas</div>
+<div><h2>Control total de tu inventario, en tiempo real.</h2><p>Reservas, préstamos y devoluciones con el inventario siempre consistente.</p>
+<ul><li>✓ Disponibilidad al instante</li><li>✓ Historial completo de movimientos</li><li>✓ Alertas de préstamos vencidos</li></ul></div>
+<small style="color:#fbcfe8">© Sistema de gestión de mesas y sillas</small></section>
+<section class="auth-form"><div class="auth-card"><h1>Bienvenido</h1><p class="sub">Ingresa con tu cuenta para continuar.</p>
+<form id="f"><label>Correo</label><input type="email" name="email" placeholder="correo@ejemplo.com" required>
+<label>Contraseña</label><input type="password" name="password" placeholder="••••••••" required minlength="8">
+<div class="modal-actions"><button class="btn" style="width:100%;justify-content:center">Ingresar</button></div></form>
+<p class="hint"><b>Demo:</b> admin@demo.com / Admin123!<br>user1@demo.com / User123!</p></div></section></div>
+<script src="js/common.js"></script>
+<script>
+document.getElementById('f').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  try {
+    const d = Object.fromEntries(new FormData(e.target).entries());
+    const r = await api('/auth/login', { method: 'POST', body: d });
+    localStorage.setItem('token', r.token); localStorage.setItem('user', JSON.stringify(r.user));
+    location.href = 'dashboard.html';
+  } catch (err) { toast(err.message, 'error'); }
+});
+</script></body></html>
