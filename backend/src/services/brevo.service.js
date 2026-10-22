@@ -19,7 +19,7 @@ async function enviar({ to, toName, subject, html, text, tags = [] }) {
       method: 'POST',
       headers: { 'api-key': process.env.BREVO_API_KEY, 'content-type': 'application/json', accept: 'application/json' },
       body: JSON.stringify({
-        sender: { name: process.env.BREVO_SENDER_NAME || 'Mesas y Sillas', email: process.env.BREVO_SENDER_EMAIL },
+        sender: { name: process.env.BREVO_SENDER_NAME || 'Mesas Rosas', email: process.env.BREVO_SENDER_EMAIL },
         to: [{ email: to, name: toName || undefined }],
         subject, htmlContent: html, textContent: text, tags
       }),
