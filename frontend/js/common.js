@@ -99,8 +99,7 @@ function initShell() {
   const ini = u.nombre.split(' ').map((x) => x[0]).slice(0, 2).join('').toUpperCase();
   const shell = document.createElement('div');
   shell.className = 'shell';
-  shell.innerHTML = `<aside class="sidebar" id="sidebar"><div class="brand"><span class="logo">${icon('box', 'width="18" height="18" style="color:#fff"')}</span>Mesas &amp; Sillas</div>${links}
-    <div class="side-foot">Sistema de inventario v1.0</div></aside>
+  shell.innerHTML = `<aside class="sidebar" id="sidebar"><div class="brand"><span class="logo">${icon('box', 'width="18" height="18" style="color:#fff"')}</span>Mesas &amp; Rosas</div>${links}
     <div class="main"><header class="navbar"><button class="btn btn-ghost menu-btn" id="menuBtn">☰</button><span class="sp"></span>
     <div class="user-chip"><div class="avatar">${esc(ini)}</div><div class="t"><div class="n">${esc(u.nombre)}</div><div class="r">${u.rol === 'ADMIN' ? 'Administrador' : 'Usuario'}</div></div></div>
     <button class="btn btn-ghost btn-sm" id="logoutBtn">Salir</button></header></div>`;
